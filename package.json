@@ -1,0 +1,24 @@
+{
+  "name": "vuepress-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs --no-cache",
+    "docs:build": "cross-env BASE=/vuepress-demo/ vuepress build docs --no-cache",
+    "docs:serve": "serve docs/.vuepress/dist"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^1.8.0",
+    "@vuepress/plugin-back-to-top": "^1.8.0",
+    "cross-env": "^7.0.3",
+    "markdown-it": "^12.0.4",
+    "prettier": "^2.2.1",
+    "vuepress": "^1.8.0",
+    "yaml": "^1.10.0"
+  },
+  "dependencies": {
+    "dayjs": "^1.10.4",
+    "lodash-es": "^4.17.20"
+  }
+}
