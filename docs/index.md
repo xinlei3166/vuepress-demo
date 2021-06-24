@@ -1,10 +1,13 @@
 ---
 home: true
-actionText: Get Started
-actionLink: /guide/
-
-altActionText: Learn More
-altActionLink: /guide/
+heroImage: /logo.png
+actions:
+- text: Get Started
+  link: /guide/
+  type: primary
+- text: Learn More
+  link: /guide/
+  type: secondary
 
 features:
     - title: 💡 Instant Server Start

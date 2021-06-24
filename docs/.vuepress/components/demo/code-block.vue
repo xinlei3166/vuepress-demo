@@ -25,21 +25,36 @@
       <transition name="text-slide">
         <span v-show="hover" class="control-text">{{ controlText }}</span>
       </transition>
+      <div class="control-button-wrap">
+        <transition name="text-slide">
+          <span v-show="isExpanded" class="control-button copy-code" @click.stop='onCopy'>复制代码片段</span>
+        </transition>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { nextTick } from 'vue'
+import clipboardCopy from 'clipboard-copy'
+import { stripTemplate, stripScript, stripStyle } from '../../plugins/md-loader/assist'
+
 export default {
   name: 'DemoCodeBlock',
   props: {
-    customClass: String
+    customClass: String,
+    sourceCode: String
   },
   data () {
     return {
       hover: false,
       fixedControl: false,
       isExpanded: false,
+      codepen: {
+        script: '',
+        html: '',
+        style: '',
+      },
     }
   },
   computed: {
@@ -74,14 +89,21 @@ export default {
       }, 300)
     },
   },
+  created() {
+    // if (this.sourceCode) {
+    //   this.codepen.html = stripTemplate(this.sourceCode)
+    //   this.codepen.script = stripScript(this.sourceCode)
+    //   this.codepen.style = stripStyle(this.sourceCode)
+    // }
+  },
   mounted() {
-    this.$nextTick(() => {
+    nextTick(() => {
       if (!this.$refs.description) {
         this.$refs.highlight.style.width = '100%'
       }
     })
   },
-  beforeDestroy() {
+  beforeUnmount() {
     this.removeScrollHandler()
   },
   methods: {
@@ -93,13 +115,19 @@ export default {
     },
     removeScrollHandler() {
       window.removeEventListener('scroll', this.scrollHandler)
-    }
+    },
+    onCopy() {
+      clipboardCopy(this.sourceCode)
+      alert('复制成功')
+    },
+    goCodepen() {}
   }
 }
 </script>
 
-<style lang='stylus' scoped>
+<style lang='scss' scoped>
 .demo-block {
+  margin: 10px 0;
   border: solid 1px #ebebeb;
   border-radius: 3px;
   transition: .2s;
@@ -117,7 +145,7 @@ export default {
 
 .meta {
   border-top: solid 1px #ebebeb;
-  background-color: $code-bg-color;
+  background-color: var(--code-bg-color);
   overflow: hidden;
   height: 0;
   transition: height .2s;
@@ -129,7 +157,7 @@ export default {
   padding: 20px;
   box-sizing: border-box;
   line-height: 26px;
-  color: $textColor;
+  color: var(--c-text);
   word-break: break-word;
   margin: 10px 10px 6px 10px;
   background-color: #fff;
@@ -158,7 +186,7 @@ export default {
 }
 
 .demo-block-control .control-icon {
-  display inline-block;
+  display: inline-block;
   font-size: 16px;
   line-height: 44px;
   transition: .3s;
@@ -178,7 +206,7 @@ export default {
 }
 
 .demo-block-control:hover {
-  color: $c-brand;
+  color: var(--c-brand);
   background-color: #f9fafc;
 }
 
@@ -189,11 +217,18 @@ export default {
 }
 
 .demo-block-control .control-button {
-  line-height: 26px;
+  padding: 14px 0;
+  color: var(--c-brand);
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 10px;
+}
+
+.demo-block-control .control-button-wrap {
+  line-height: 44px;
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 14px;
   padding-left: 5px;
   padding-right: 25px;
 }

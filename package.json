@@ -4,21 +4,26 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "docs:dev": "vuepress dev docs --no-cache",
-    "docs:build": "cross-env BASE=/vuepress-demo/ vuepress build docs --no-cache",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "cross-env BASE=/vuepress-demo/ vuepress build docs --clean-cache",
     "docs:serve": "serve docs/.vuepress/dist"
   },
   "devDependencies": {
-    "@vuepress/plugin-active-header-links": "^1.8.0",
-    "@vuepress/plugin-back-to-top": "^1.8.0",
+    "@vuepress/plugin-active-header-links": "^2.0.0-beta.19",
+    "@vuepress/plugin-back-to-top": "^2.0.0-beta.19",
+    "@vuepress/plugin-debug": "^2.0.0-beta.19",
+    "@vuepress/plugin-pwa": "^2.0.0-beta.19",
+    "@vuepress/plugin-pwa-popup": "^2.0.0-beta.19",
+    "@vuepress/plugin-register-components": "^2.0.0-beta.19",
+    "@vuepress/plugin-search": "^2.0.0-beta.19",
+    "@vuepress/plugin-shiki": "^2.0.0-beta.19",
     "cross-env": "^7.0.3",
+    "dayjs": "^1.10.4",
     "markdown-it": "^12.0.4",
     "prettier": "^2.2.1",
-    "vuepress": "^1.8.0",
-    "yaml": "^1.10.0"
+    "vuepress-vite": "^2.0.0-beta.19"
   },
   "dependencies": {
-    "dayjs": "^1.10.4",
-    "lodash-es": "^4.17.20"
+    "clipboard-copy": "^4.0.1"
   }
 }
