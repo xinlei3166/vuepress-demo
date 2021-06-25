@@ -59,11 +59,9 @@ exports.useDemoRender = md => {
     if (result.indexOf(startTag) !== -1 && result.indexOf(endTag) !== -1) {
       const { template, script, style } = renderDemoBlock(result)
       result = template
-      if (!arr[1].hoistedTags) {
-        arr[1].hoistedTags = []
-      }
-      arr[1].hoistedTags.push(script)
-      arr[1].hoistedTags.push(style)
+      const hoistedTags = arr[1].hoistedTags || (arr[1].hoistedTags = [])
+      hoistedTags.push(script)
+      hoistedTags.push(style)
     }
     return result
   }

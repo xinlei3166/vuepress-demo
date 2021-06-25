@@ -1,6 +1,5 @@
 module.exports = {
   '/api/': getAPISidebar(),
-  '/plugins/': getPluginsSidebar(),
   '/components/': getComponentsSidebar(),
   '/guide/': getGuideSidebar()
 }
@@ -63,8 +62,3 @@ function getAPISidebar() {
   ]
 }
 
-function getPluginsSidebar() {
-  return [
-    { text: '插件', link:'/plugins/index.md'},
-  ]
-}
