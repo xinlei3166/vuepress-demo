@@ -37,8 +37,6 @@ module.exports = {
     extractHeaders: { level: [ 'h2', 'h3', 'h4' ] },
   },
   extendsMarkdown: (md) => {
-    // use more markdown-it plugins
-    // md.use(require('markdown-it-xxx'))
     const { useDemoBlock, useDemoCode, useDemoRender } = require('./plugins/md-loader')
     useDemoBlock(md)
     useDemoCode(md) // 代码高亮的语言默认为vue，可传入第二个参数自定义语言 demoCode(md, 'html')

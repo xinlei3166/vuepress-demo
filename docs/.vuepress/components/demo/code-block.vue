@@ -27,7 +27,7 @@
       </transition>
       <div class="control-button-wrap">
         <transition name="text-slide">
-          <span v-show="isExpanded" class="control-button copy-code" @click.stop='onCopy'>复制代码片段</span>
+          <span v-show="isExpanded" class="control-button copy-code" @click.stop="onCopy">复制代码片段</span>
         </transition>
       </div>
     </div>
@@ -37,6 +37,7 @@
 <script>
 import { nextTick } from 'vue'
 import clipboardCopy from 'clipboard-copy'
+import throttle from 'lodash/throttle'
 import { stripTemplate, stripScript, stripStyle } from '../../plugins/md-loader/assist'
 
 export default {
@@ -107,12 +108,12 @@ export default {
     this.removeScrollHandler()
   },
   methods: {
-    scrollHandler() {
+    scrollHandler: throttle(function () {
       const { top, bottom, left } = this.$refs.meta.getBoundingClientRect()
       const innerHeight = window.innerHeight || document.body.clientHeight
       this.fixedControl = bottom > innerHeight && top + 44 <= innerHeight
       this.$refs.control.style.left = this.fixedControl ? `${ left }px` : '0'
-    },
+    }, 200),
     removeScrollHandler() {
       window.removeEventListener('scroll', this.scrollHandler)
     },
