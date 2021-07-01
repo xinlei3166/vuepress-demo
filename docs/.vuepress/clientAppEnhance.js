@@ -1,7 +1,7 @@
 import { defineClientAppEnhance } from '@vuepress/client'
 import Button from '../../src/components/Button.vue'
 import '../../src/styles/index.css'
-import './styles/iconfont/iconfont.css'
+import './styles/index.scss'
 
 export default defineClientAppEnhance(({
   app,

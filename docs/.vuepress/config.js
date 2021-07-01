@@ -36,12 +36,6 @@ module.exports = {
 
     extractHeaders: { level: [ 'h2', 'h3', 'h4' ] },
   },
-  extendsMarkdown: (md) => {
-    const { useDemoBlock, useDemoCode, useDemoRender } = require('./plugins/md-loader')
-    useDemoBlock(md)
-    useDemoCode(md) // 代码高亮的语言默认为vue，可传入第二个参数自定义语言 demoCode(md, 'html')
-    useDemoRender(md)
-  },
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-active-header-links',
@@ -61,12 +55,7 @@ module.exports = {
         componentsDir: path.resolve(__dirname, './components'),
       },
     ],
-    [
-      '@vuepress/plugin-shiki',
-      {
-        theme: 'github-light',
-      }
-    ],
+    ['vuepress-plugin-demoblock-plus']
   ]
 }
 
