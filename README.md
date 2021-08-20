@@ -1,5 +1,5 @@
 # Vuepress Demo
-使用vuepress2搭建vue3组件库文档站点。
+基于 [vuepress-plugin-demoblock-plus](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus) 插件来实现vue组件的支持。
 
 
 - [x] vue组件
