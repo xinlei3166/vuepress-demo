@@ -37,8 +37,8 @@ module.exports = {
     extractHeaders: { level: [ 'h2', 'h3', 'h4' ] },
   },
   plugins: [
-    '@vuepress/plugin-back-to-top',
-    '@vuepress/plugin-active-header-links',
+    // '@vuepress/plugin-back-to-top',
+    // '@vuepress/plugin-active-header-links',
     ['@vuepress/plugin-debug'],
     ['@vuepress/plugin-pwa'],
     [
@@ -55,7 +55,13 @@ module.exports = {
         componentsDir: path.resolve(__dirname, './components'),
       },
     ],
-    ['vuepress-plugin-demoblock-plus']
+    ['vuepress-plugin-demoblock-plus', {
+      scriptImports: [
+        { searchValue: /const ({ defineComponent as _defineComponent }) = Vue/g,
+          replaceValue: 'const { defineComponent: _defineComponent } = Vue'
+        }
+      ]
+    }]
   ]
 }
 

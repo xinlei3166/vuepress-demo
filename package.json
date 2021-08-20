@@ -10,17 +10,15 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@vuepress/plugin-active-header-links": "^2.0.0-beta.19",
-    "@vuepress/plugin-back-to-top": "^2.0.0-beta.19",
-    "@vuepress/plugin-debug": "^2.0.0-beta.19",
-    "@vuepress/plugin-pwa": "^2.0.0-beta.19",
-    "@vuepress/plugin-pwa-popup": "^2.0.0-beta.19",
-    "@vuepress/plugin-register-components": "^2.0.0-beta.19",
-    "@vuepress/plugin-search": "^2.0.0-beta.19",
-    "@vuepress/plugin-shiki": "^2.0.0-beta.20",
-    "vuepress-plugin-demoblock-plus": "^1.0.5",
-    "prettier": "^2.2.1",
+    "@vuepress/plugin-debug": "^2.0.0-beta.24",
+    "@vuepress/plugin-pwa": "^2.0.0-beta.24",
+    "@vuepress/plugin-pwa-popup": "^2.0.0-beta.24",
+    "@vuepress/plugin-register-components": "^2.0.0-beta.24",
+    "@vuepress/plugin-search": "^2.0.0-beta.24",
+    "@vuepress/plugin-shiki": "^2.0.0-beta.24",
+    "vuepress-plugin-demoblock-plus": "^1.1.1",
+    "vuepress-vite": "^2.0.0-beta.24",
     "cross-env": "^7.0.3",
-    "vuepress-vite": "^2.0.0-beta.19"
+    "prettier": "^2.2.1"
   }
 }
