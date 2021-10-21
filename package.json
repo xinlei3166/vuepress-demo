@@ -16,9 +16,10 @@
     "@vuepress/plugin-register-components": "^2.0.0-beta.24",
     "@vuepress/plugin-search": "^2.0.0-beta.24",
     "@vuepress/plugin-shiki": "^2.0.0-beta.24",
-    "vuepress-plugin-demoblock-plus": "^1.1.1",
-    "vuepress-vite": "^2.0.0-beta.24",
     "cross-env": "^7.0.3",
-    "prettier": "^2.2.1"
+    "less": "^4.1.2",
+    "prettier": "^2.2.1",
+    "vuepress-plugin-demoblock-plus": "^1.2.6",
+    "vuepress-vite": "^2.0.0-beta.24"
   }
 }
