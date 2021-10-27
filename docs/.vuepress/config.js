@@ -57,7 +57,7 @@ module.exports = {
     ],
     ['vuepress-plugin-demoblock-plus', {
       cssPreprocessor: 'less',
-      scriptImports: [
+      scriptReplaces: [
         { searchValue: /const ({ defineComponent as _defineComponent }) = Vue/g,
           replaceValue: 'const { defineComponent: _defineComponent } = Vue'
         }
