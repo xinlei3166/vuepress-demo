@@ -33,8 +33,9 @@ export default defineComponent({
 
 <style lang="less">
 .input {
-  border: 1px solid #ebebeb;
+  border: 1px solid var(--c-border);
   border-radius: 4px;
+  background: transparent;
   padding: 14px;
   width: 300px;
   font-size: 16px;
@@ -76,8 +77,9 @@ function onSubmit() {
 
 <style lang="less">
 .input {
-  border: 1px solid #ebebeb;
+  border: 1px solid var(--c-border);
   border-radius: 4px;
+  background: transparent;
   padding: 14px;
   width: 300px;
   font-size: 16px;

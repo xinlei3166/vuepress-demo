@@ -13,7 +13,7 @@ module.exports = {
     docsDir: 'docs',
     docsBranch: 'master',
 
-    darkMode: false,
+    darkMode: true,
 
     // navbar
     navbar,
@@ -56,6 +56,8 @@ module.exports = {
       },
     ],
     ['vuepress-plugin-demoblock-plus', {
+      customClass: 'demoblock-custom',
+      // theme: 'github-light',
       cssPreprocessor: 'less',
       scriptReplaces: [
         { searchValue: /const ({ defineComponent as _defineComponent }) = Vue/g,
