@@ -22,6 +22,20 @@ export default defineComponent({
     const input = ref()
     const content = ref()
 
+    const url = 'https://github.com/xinlei3166/vuepress-plugin-demoblock-plus'
+
+    const data = [
+      {
+        name: '1'
+      },
+      {
+        name: '1'
+      },
+      {
+        name: '1'
+      }
+    ]
+
     function onSubmit() {
       content.value = input.value
     }
