@@ -3425,10 +3425,10 @@ vue@^3.2.20:
     "@vue/server-renderer" "3.2.23"
     "@vue/shared" "3.2.23"
 
-vuepress-plugin-demoblock-plus@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/vuepress-plugin-demoblock-plus/-/vuepress-plugin-demoblock-plus-1.5.0.tgz#93f641a0dafc50e129c6660c32a59b85504e8b5e"
-  integrity sha512-xsa3wj6M70+kOTRhU7IcfwuDqcdhhK0ErYiantmTwzpcVppsRuYhXevCAgjw5rAKRCgIYNX04lMgbhLpKxQGrQ==
+vuepress-plugin-demoblock-plus@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-demoblock-plus/-/vuepress-plugin-demoblock-plus-1.5.1.tgz#4c3f3ddb0bbc1345382595b8af84a5147786a793"
+  integrity sha512-MOW5Ja/Fg3BeOxWBmhaCkllYdN74rq2TEt/uFHUgFtw6TNlDZ4RLbAKRzpPXTmZI8GKBvC9mtA4TiaPi8ahwjQ==
   dependencies:
     "@vuepress/plugin-shiki" "^2.0.0-beta.24"
     lodash-es "^4.17.21"

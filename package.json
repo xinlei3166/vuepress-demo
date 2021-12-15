@@ -19,7 +19,7 @@
     "cross-env": "^7.0.3",
     "less": "^4.1.2",
     "prettier": "^2.2.1",
-    "vuepress-plugin-demoblock-plus": "^1.5.0",
+    "vuepress-plugin-demoblock-plus": "^1.5.1",
     "vuepress-vite": "^2.0.0-beta.24"
   },
   "engines": {
