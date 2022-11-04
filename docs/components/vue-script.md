@@ -84,7 +84,7 @@ interface IObject {
 const input = ref<any>()
 const content = ref<any>()
 
-function onSubmit(data: any, params: {}, { a = 1, b} : any) {
+function onSubmit() {
   content.value = input.value
 }
 </script>

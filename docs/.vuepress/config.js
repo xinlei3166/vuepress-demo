@@ -1,14 +1,23 @@
-const path = require('path')
-const navbar = require('./configs/navbar')
-const sidebar = require('./configs/sidebar')
+import { pwaPlugin } from '@vuepress/plugin-pwa'
+import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup'
+import { searchPlugin } from '@vuepress/plugin-search'
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import { getDirname } from '@vuepress/utils'
+import { defineUserConfig, defaultTheme } from 'vuepress'
+import { demoblockPlugin } from 'vuepress-plugin-demoblock-plus'
+import path from 'path'
+import navbar from './configs/navbar'
+import sidebar from './configs/sidebar'
 
-module.exports = {
+const __dirname = getDirname(import.meta.url)
+
+export default defineUserConfig({
   title: 'VuePress',
   description: 'Life is short, Keep it simple.',
   head: [['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }]],
   base: process.env.BASE || '/',
   port: 3000,
-  themeConfig: {
+  theme: defaultTheme({
     repo: 'xinlei3166/vuepress-demo',
     docsDir: 'docs',
     docsBranch: 'master',
@@ -26,7 +35,7 @@ module.exports = {
     editLinkText: '在 GitHub 上编辑此页',
     lastUpdatedText: '上次更新',
     contributorsText: '贡献者',
-  },
+  }),
   markdown: {
     // options for markdown-it-anchor
     anchor: { permalink: false, level: [1, 2] },
@@ -39,24 +48,16 @@ module.exports = {
   plugins: [
     // '@vuepress/plugin-back-to-top',
     // '@vuepress/plugin-active-header-links',
-    ['@vuepress/plugin-debug'],
-    ['@vuepress/plugin-pwa'],
-    [
-      '@vuepress/plugin-pwa-popup',
-      {
-        message: '发现新内容可用',
-        buttonText: '刷新',
-      },
-    ],
-    ['@vuepress/plugin-search', { searchMaxSuggestions: 5 }],
-    [
-      '@vuepress/plugin-register-components',
-      {
+    pwaPlugin(),
+    pwaPopupPlugin({
+      message: '发现新内容可用',
+      buttonText: '刷新',
+    }),
+    searchPlugin({ searchMaxSuggestions: 5 }),
+    registerComponentsPlugin({
         componentsDir: path.resolve(__dirname, './components'),
-      },
-    ],
-    ['vuepress-plugin-demoblock-plus', {
-      customClass: 'demoblock-custom',
+    }),
+    demoblockPlugin({customClass: 'demoblock-custom',
       // theme: 'github-light',
       cssPreprocessor: 'less',
       scriptReplaces: [
@@ -64,8 +65,8 @@ module.exports = {
           replaceValue: 'const { defineComponent: _defineComponent } = Vue'
         }
       ]
-    }]
+    })
   ]
-}
+})
 
 
